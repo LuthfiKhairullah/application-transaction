@@ -7,7 +7,7 @@ Daftar Transaksi
 @section('content')
 <div class="d-flex justify-content-between p-2">
   <h3>Daftar Transaksi</h3>
-  <a href="{{ url('/form_transaksi') }}" class="btn btn-md btn-primary">Tambah Transaksi</a>
+  <a href="{{ secure_url('/form_transaksi') }}" class="btn btn-md btn-primary">Tambah Transaksi</a>
 </div>
 <div class="mb-3">
   <div class="table-responsive">
@@ -31,14 +31,14 @@ Daftar Transaksi
           $grand_total += $transaction['total_bayar'] ?>
           <tr>
             <td>{{ $no + 1 }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->kode }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ date('Y-m-d', strtotime($transaction->tgl)) }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->cust_name }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->total_barang }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ number_format($transaction->subtotal, 2) }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->diskon > 0 ? number_format($transaction->diskon, 2) : '' }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->ongkir > 0 ? number_format($transaction->ongkir, 2) : '' }}</td>
-            <td style="cursor: pointer;" onclick="location.href='<?= url('/form_transaksi/' . $transaction['id']) ?>'">{{ number_format($transaction->total_bayar, 2) }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->kode }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ date('Y-m-d', strtotime($transaction->tgl)) }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->cust_name }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->total_barang }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ number_format($transaction->subtotal, 2) }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->diskon > 0 ? number_format($transaction->diskon, 2) : '' }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ $transaction->ongkir > 0 ? number_format($transaction->ongkir, 2) : '' }}</td>
+            <td style="cursor: pointer;" onclick="location.href='<?= secure_url('/form_transaksi/' . $transaction['id']) ?>'">{{ number_format($transaction->total_bayar, 2) }}</td>
           </tr>
         <?php } ?>
       </tbody>

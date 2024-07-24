@@ -14,7 +14,7 @@ Transaksi
     </ul>
 </div>
 @endif
-<form action="{{ url('/form_transaksi' . (($sales_id != '') ? '/' . $sales_id : '')) }}" method="POST" id="form_transaksi">
+<form action="{{ secure_url('/form_transaksi' . (($sales_id != '') ? '/' . $sales_id : '')) }}" method="POST" id="form_transaksi">
     @csrf
     <div class="bg-info mb-3 p-2">
         <h3>Transaksi</h3>
@@ -142,7 +142,7 @@ Transaksi
     </div>
     <div class="text-center">
         <button type="submit" class="btn btn-primary">Simpan</button>
-        <a href="{{ url('/transaksi') }}" class="btn btn-secondary ms-4">Kembali</a>
+        <a href="{{ secure_url('/transaksi') }}" class="btn btn-secondary ms-4">Kembali</a>
     </div>
 </form>
 @endsection
@@ -376,7 +376,7 @@ Transaksi
 
     $('#kode_barang').change((e) => {
         $.ajax({
-            url: "<?= url('/get_barang') ?>",
+            url: "<?= secure_url('/get_barang') ?>",
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },

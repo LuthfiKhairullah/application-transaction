@@ -49,7 +49,7 @@ Daftar Customer
             <td class="text-center">
               <div class="d-flex justify-content-center">
                 <button type="button" class="btn btn-sm btn-warning btn_update me-1" data-json='{{ json_encode($customer) }}' onclick="btn_update(this, <?= $customer['id'] ?>)">Ubah</button>
-                <form action="{{ route('master_customer.destroy', $customer->id) }}" method="POST" id="form_delete_customer" onsubmit="return showConfirm()">
+                <form action="{{ secure_url('/delete_customer/' . $customer->id) }}" method="POST" id="form_delete_customer" onsubmit="return showConfirm()">
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
@@ -168,7 +168,7 @@ Daftar Customer
   $('#btn_add').on('click', function() {
     $('#modal_customerLabel').html('Tambah Customer');
     $('#btn_update_customer').html('Tambah');
-    $('.form_update_customer').attr('action', "{{ route('master_customer.store') }}");
+    $('.form_update_customer').attr('action', "{{ secure_url('/add_customer') }}");
     setFormMethod('POST');
     $('.form_update_customer')[0].reset();
     $('#modal_customer').modal('show');
@@ -179,7 +179,7 @@ Daftar Customer
 
     $('#modal_customerLabel').html('Ubah Customer');
     $('#btn_update_customer').html('Ubah');
-    $('.form_update_customer').attr('action', `{{ url('/update_customer') }}/${id}`);
+    $('.form_update_customer').attr('action', `{{ secure_url('/update_customer') }}/${id}`);
     setFormMethod('PUT');
     $('#kode_customer').val(data.kode);
     $('#name_customer').val(data.name);

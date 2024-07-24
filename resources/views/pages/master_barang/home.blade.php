@@ -49,7 +49,7 @@ Daftar Barang
             <td class="text-center">
               <div class="d-flex justify-content-center">
                 <button type="button" class="btn btn-sm btn-warning btn_update me-1" data-json='{{ json_encode($barang) }}' onclick="btn_update(this, <?= $barang['id'] ?>)">Ubah</button>
-                <form action="{{ route('master_barang.destroy', $barang->id) }}" method="POST" id="form_delete_barang" onsubmit="return showConfirm()">
+                <form action="{{ secure_url('/delete_barang/' . $barang->id) }}" method="POST" id="form_delete_barang" onsubmit="return showConfirm()">
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
@@ -168,7 +168,7 @@ Daftar Barang
   $('#btn_add').on('click', function() {
     $('#modal_customerLabel').html('Tambah Barang');
     $('#btn_update_barang').html('Tambah');
-    $('.form_update_barang').attr('action', "{{ route('master_barang.store') }}");
+    $('.form_update_barang').attr('action', "{{ secure_url('/add_barang') }}");
     setFormMethod('POST');
     $('.form_update_barang')[0].reset();
     $('#modal_barang').modal('show');
@@ -179,7 +179,7 @@ Daftar Barang
 
     $('#modal_customerLabel').html('Ubah Barang');
     $('#btn_update_barang').html('Ubah');
-    $('.form_update_barang').attr('action', `{{ url('/update_barang') }}/${id}`);
+    $('.form_update_barang').attr('action', `{{ secure_url('/update_barang') }}/${id}`);
     setFormMethod('PUT');
     $('#kode_barang').val(data.kode);
     $('#nama_barang').val(data.nama);
