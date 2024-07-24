@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <?php $currentUrl = url()->current() ?>
+                    <?php $currentUrl = secure_url(request()->path()) ?>
                     <li class="nav-item">
                         <a class="nav-link fw-bold {{ $currentUrl == secure_url('/') ? 'active' : '' }}" href="{{ secure_url('/') }}">List Transaksi</a>
                     </li>
