@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap_5.0.2/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/dataTables/css/dataTables.bootstrap5.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/dataTables/css/responsive.bootstrap5.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/sweetalert2/css/minimal.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/select2_4.1.0/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/bootstrap_5.0.2/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/dataTables/css/dataTables.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/dataTables/css/responsive.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/sweetalert2/css/minimal.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/select2_4.1.0/css/select2.min.css') }}">
 </head>
 
 <body>
@@ -45,14 +45,14 @@
         </div>
     </main>
     @yield('modals')
-    <script src="{{ asset('assets/jquery_3.7.1/js/jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ asset('assets/bootstrap_5.0.2/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/dataTables/js/dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/dataTables/js/dataTables.boostrap5.js') }}"></script>
-    <script src="{{ asset('assets/dataTables/js/dataTables.responsive.js') }}"></script>
-    <script src="{{ asset('assets/dataTables/js/responsive.bootstrap5.js') }}"></script>
-    <script src="{{ asset('assets/sweetalert2/js/sweetalert2.min.js') }}"></script>
-    <script src="{{ asset('assets/select2_4.1.0/js/select2.min.js') }}"></script>
+    <script src="{{ secure_asset('assets/jquery_3.7.1/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ secure_asset('assets/bootstrap_5.0.2/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ secure_asset('assets/dataTables/js/dataTables.min.js') }}"></script>
+    <script src="{{ secure_asset('assets/dataTables/js/dataTables.boostrap5.js') }}"></script>
+    <script src="{{ secure_asset('assets/dataTables/js/dataTables.responsive.js') }}"></script>
+    <script src="{{ secure_asset('assets/dataTables/js/responsive.bootstrap5.js') }}"></script>
+    <script src="{{ secure_asset('assets/sweetalert2/js/sweetalert2.min.js') }}"></script>
+    <script src="{{ secure_asset('assets/select2_4.1.0/js/select2.min.js') }}"></script>
     @yield('scripts')
 </body>
 
